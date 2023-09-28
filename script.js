@@ -1,6 +1,30 @@
 // console.log("connected!");
 const firstDom = document.getElementsByTagName("h1");
 
+// event
+const mathValue = document.getElementById("math-value");
+const inputValue = document.getElementById("input-number");
+const answer = document.getElementById("answer");
+const check = document.getElementById("check");
+
+const valueOfRandom = Math.trunc(Math.random() * 40);
+let counter = 0;
+check.addEventListener("click", function () {
+  const input = Number(inputValue.value);
+  counter++;
+  if (input < 0 || input >= 60) {
+    answer.innerText = "invalid";
+  } else if (input < valueOfRandom) {
+    answer.innerText = "Boost Your Input";
+  } else if (input > valueOfRandom) {
+    answer.innerText = "rest Your Input";
+  } else if (input === valueOfRandom) {
+    answer.innerText = "winning......................";
+    mathValue.innerText = valueOfRandom;
+  }
+});
+
+// end of events
 // console.log(firstDom[0].innerText);
 
 // get all tag name,it returns an array [h1,h1]
@@ -22,8 +46,8 @@ const arr = [1, 2, 3, 3];
 // console.log(Boolean(Array.isArray(htmlCollection))); //false
 // console.log(Boolean(Array.isArray(arr))); //true
 // console.log(typeof htmlCollection);
-console.log(htmlCollection);
-console.log(htmlCollection[0].childNodes);
+// console.log(htmlCollection);
+// console.log(htmlCollection[0].childNodes);
 // const nodeCollection = document.querySelectorAll(".node");
 // console.log(nodeCollection[0].children);
 
