@@ -7,12 +7,12 @@ const inputValue = document.getElementById("input-number");
 const answer = document.getElementById("answer");
 const check = document.getElementById("check");
 
-const valueOfRandom = Math.trunc(Math.random() * 40);
+const valueOfRandom = Math.trunc(Math.random() * 30);
 let counter = 0;
 check.addEventListener("click", function () {
   const input = Number(inputValue.value);
   counter++;
-  if (input < 0 || input >= 60) {
+  if (input < 0 || input > 30) {
     answer.innerText = "invalid";
   } else if (input < valueOfRandom) {
     answer.innerText = "Boost Your Input";
@@ -58,3 +58,21 @@ it gives us an html collection.it is an array like objects.so we can not apply f
 
 
 */
+const add = document.getElementById("add");
+const comment = document.getElementById("comment");
+const place = document.getElementById("deleting-add");
+const deleteAll = document.getElementById("delete-all");
+add.addEventListener("click", function () {
+  const p = document.createElement("p");
+  const commentValue = comment.value;
+  p.innerText = commentValue;
+  place.appendChild(p);
+  deleteAll.style.display = "inline-block";
+  p.addEventListener("click", function () {
+    p.style.display = "none";
+  });
+});
+// delete all
+deleteAll.addEventListener("click", function () {
+  place.style.display = "none";
+});
