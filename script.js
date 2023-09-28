@@ -62,17 +62,41 @@ const add = document.getElementById("add");
 const comment = document.getElementById("comment");
 const place = document.getElementById("deleting-add");
 const deleteAll = document.getElementById("delete-all");
+const text = document.getElementsByClassName("text");
+const deleteText = document.getElementById("delete-input-field");
+const deleteBtn = document.getElementById("deleteText");
+// console.log(deleteText);
 add.addEventListener("click", function () {
   const p = document.createElement("p");
   const commentValue = comment.value;
   p.innerText = commentValue;
+  p.classList.add("text");
   place.appendChild(p);
   deleteAll.style.display = "inline-block";
   p.addEventListener("click", function () {
     p.style.display = "none";
   });
 });
+// console.log(place);
+const deleteValue = deleteText.value;
+deleteText.addEventListener("keyup", function (e) {
+  // console.log(e.target.value);
+  const value = e.target.value;
+  for (const i of text) {
+    if (i.innerText === value) {
+      deleteBtn.removeAttribute("disabled");
+      break;
+    } else {
+      deleteBtn.setAttribute("disabled", true);
+    }
+  }
+});
 // delete all
 deleteAll.addEventListener("click", function () {
   place.style.display = "none";
 });
+function pur() {
+  console.log("hello");
+}
+
+// delete by keybpard button

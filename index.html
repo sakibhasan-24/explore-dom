@@ -15,12 +15,18 @@
         <p>text</p>
       </div>
       <h3>add comment</h3>
+
       <textarea name="" id="comment" cols="30" rows="10"></textarea>
       <br />
       <br />
       <button id="add">Add</button>
       <button id="delete-all" style="display: none">Delete All</button>
+      <input type="text" name="" placeholder="type" id="delete-input-field" />
+      <br />
+      <br />
+      <button disabled id="deleteText">Delete</button>
     </section>
+
     <main>
       <h1>what is Dom</h1>
       <h3>How to access</h3>
@@ -65,7 +71,7 @@
           <button onclick="{console.log(Math.trunc(Math.random()*100))}">
             on click inline
           </button>
-
+          <button onclick="pur()">hello</button>
           <!-- <button onmouseenter="{console.log(Math.trunc(Math.random()*10))}">
             MouseHover
           </button> -->
